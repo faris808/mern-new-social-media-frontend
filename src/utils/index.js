@@ -1,5 +1,5 @@
 import axios from "axios";
-import setPosts from "../redux/postSlice";
+import { SetPosts } from "../redux/postSlice";
 const API_URL = "http://localhost:8800";
 
 export const API = axios.create({
@@ -28,8 +28,8 @@ export const apiRequest = async ({ url, token, data, method }) => {
 export const handleFileUpload=async (uploadFile)=>{
     const formData=new FormData();
     formData.append("file",uploadFile);
-    formData.append("upload_preset","socialmedia");
-
+    formData.append("upload_preset","mern-social-media");
+    formData.append("cloud_name","dk44wd8tx");
     try {
         const response=await axios.post(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_ID}/image/upload`,formData);
         return response.data.secure_url;
@@ -46,8 +46,8 @@ export const fetchPosts=async(token, dispatch, uri, data)=>{
             method:"POST",
             data:data||{},
         });
-
-        dispatch(setPosts(res?.data));
+        console.log("I am checking the result of the fetchPost",res?.data);
+        dispatch(SetPosts(res?.data));
         return;
     } catch (error) {
         console.log(error);

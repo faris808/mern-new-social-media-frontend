@@ -252,7 +252,7 @@ const PostCard = ({ post, user, deletePost, likePost }) => {
       >
         <p
           className="flex gap-2 items-center text-base cursor-pointer"
-          onClick={() => handleLike("/posts/like" + post?._id)}
+          onClick={() => handleLike("/posts/like/" + post?._id)}
         >
           {post?.likes?.includes(user?._id) ? (
             <BiSolidLike size={20} color="blue" />

@@ -29,6 +29,8 @@ const EditProfile = () => {
     setErrMsg("");
     try {
       const uri=picture && (await handleFileUpload(picture));
+      console.log("Picture is :-", picture);
+      console.log("Uri is :-", uri);
       const {firstName, lastName, location, profession}=data;
       const res=await apiRequest({
         url:"/users/update-user",
