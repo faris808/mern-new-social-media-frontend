@@ -17,6 +17,7 @@ const postSlice = createSlice({
 export default postSlice.reducer;
 
 export function SetPosts(post) {
+  console.log("Setposts is called", post);
   return (dispatch, getState) => {
     dispatch(postSlice.actions.getPosts(post));
   };

@@ -21,6 +21,7 @@ import { UserLogin } from "../redux/userSlice";
 const Home = () => {
   const { user, edit } = useSelector((state) => state.user);
   const {posts} =useSelector(state => state.posts);
+  console.log(posts);
   const [friendRequest, setFriendRequest] = useState([]);
   const [suggestedFriends, setSuggestedFriends] = useState([]);
   const [errMsg, setErrMsg] = useState("");
@@ -246,7 +247,7 @@ const Home = () => {
                 </div>
               </div>
             </form>
-
+             {console.log("Checking what is inside the posts", posts)}
             {loading ? (
               <Loading />
             ) : posts?.length > 0 ? (
