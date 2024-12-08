@@ -1,6 +1,6 @@
 import axios from "axios";
 import { SetPosts } from "../redux/postSlice";
-const API_URL = "https://mern-new-social-media-backend.onrender.com";
+const API_URL = "https://mern-new-social-media-backend-production.up.railway.app";
 
 export const API = axios.create({
   baseURL: API_URL,
